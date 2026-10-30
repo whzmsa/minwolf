@@ -359,24 +359,12 @@ var CustomizableUIInternal = {
     );
 
     let navbarPlacements = [
-      lazy.sidebarRevampEnabled ? "sidebar-button" : null,
       "back-button",
       "forward-button",
       "stop-reload-button",
-      Services.policies.isAllowed("removeHomeButtonByDefault")
-        ? null
-        : "home-button",
-      "spring",
-      "vertical-spacer",
       "urlbar-container",
-      "spring",
-      "downloads-button",
-      AppConstants.MOZ_DEV_EDITION ? "developer-button" : null,
-      lazy.ippEnabled ? "ipprotection-button" : null,
-      "fxa-toolbar-menu-button",
-      lazy.resetPBMToolbarButtonEnabled ? "reset-pbm-toolbar-button" : null,
-      lazy.fireButtonEnabled ? "fire-button" : null,
-    ].filter(name => name);
+      "unified-extensions-button",
+    ];
 
     this.registerArea(
       CustomizableUI.AREA_NAVBAR,
@@ -384,11 +372,7 @@ var CustomizableUIInternal = {
         type: CustomizableUI.TYPE_TOOLBAR,
         overflowable: true,
         defaultPlacements: navbarPlacements,
-        verticalTabsDefaultPlacements: [
-          "alltabs-button",
-          "smartwindow-group-tabs-button",
-          "ai-window-toggle",
-        ],
+        verticalTabsDefaultPlacements: [],
         defaultCollapsed: false,
       },
       true
@@ -414,9 +398,6 @@ var CustomizableUIInternal = {
           "tabbrowser-tabs",
           "new-tab-button",
           "spring",
-          "alltabs-button",
-          "smartwindow-group-tabs-button",
-          "ai-window-toggle",
         ],
         verticalTabsDefaultPlacements: [],
         defaultCollapsed: null,
@@ -440,7 +421,7 @@ var CustomizableUIInternal = {
       {
         type: CustomizableUI.TYPE_TOOLBAR,
         defaultPlacements: ["personal-bookmarks"],
-        defaultCollapsed: "newtab",
+        defaultCollapsed: true,
       },
       true
     );

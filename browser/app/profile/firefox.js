@@ -2333,7 +2333,7 @@ pref("pdfjs.handleOctetStream", true);
 
 // Is the sidebar positioned ahead of the content browser
 pref("sidebar.position_start", true);
-pref("sidebar.revamp", true);
+pref("sidebar.revamp", false, locked);
 pref("sidebar.animation.enabled", true);
 pref("sidebar.animation.expand-on-hover.duration-ms", 200);
 pref("sidebar.animation.expand-on-hover.delay-duration-ms", 200);
@@ -2343,7 +2343,7 @@ pref("sidebar.animation.expand-on-hover.delay-duration-ms", 200);
 // you can introduce a new tool to the sidebar launcher.
 pref("sidebar.main.tools", "");
 pref("sidebar.installed.extensions", "");
-pref("sidebar.verticalTabs", false);
+pref("sidebar.verticalTabs", false, locked);
 pref("sidebar.verticalTabs.dragToPinPromo.dismissed", false);
 // One value per behavior, none shared across tab orientations. Vertical tabs:
 // "always-show", "expand-on-hover", "hide-sidebar". Horizontal tabs:

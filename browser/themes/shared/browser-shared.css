@@ -1791,3 +1791,37 @@ popupnotificationcontent {
 #bookmarksToolbarFolderMenu {
   --menuitem-icon: url("chrome://browser/skin/places/bookmarksToolbar.svg");
 }
+
+/* Keep the minimal chrome consistent with saved toolbar customizations. */
+:root:not([customizing]) {
+  #nav-bar-customization-target > :not(
+    #back-button,
+    #forward-button,
+    #stop-reload-button,
+    #urlbar-container,
+    #unified-extensions-button,
+    .webextension-browser-action
+  ),
+  #TabsToolbar-customization-target > :not(
+    #tabbrowser-tabs,
+    #new-tab-button,
+    toolbarspring
+  ),
+  #toolbar-menubar,
+  #PersonalToolbar,
+  #sidebar-container,
+  #sidebar-launcher-splitter,
+  #sidebar-box,
+  #sidebar-splitter,
+  #smartwindow-ask-button,
+  #reader-mode-button,
+  #picture-in-picture-button,
+  #taskbar-tabs-button,
+  #translations-button,
+  #split-view-button,
+  #share-button,
+  #pageActionButton,
+  #star-button-box {
+    display: none !important;
+  }
+}
