@@ -1792,6 +1792,27 @@ popupnotificationcontent {
   --menuitem-icon: url("chrome://browser/skin/places/bookmarksToolbar.svg");
 }
 
+#appMenu-mainView {
+  #appMenu-menu-message,
+  #appMenu-fxa-status2,
+  #appMenu-fxa-sign-in-promo,
+  #appMenu-create-profile-button,
+  #appMenu-profiles-button,
+  #appMenu-fxa-separator,
+  #appMenu-new-ai-window-button,
+  #appMenu-new-classic-window-button,
+  #appMenu-tab-groups-button,
+  #appMenu-chats-history-button,
+  #appMenu-extensions-themes-button,
+  #appMenu-unified-extensions-button,
+  #appMenu-translate-button,
+  #appMenu-more-button2,
+  #appMenu-referrals-separator,
+  #appMenu-referrals-button {
+    display: none !important;
+  }
+}
+
 /* Keep the minimal chrome consistent with saved toolbar customizations. */
 :root:not([customizing]) {
   #nav-bar-customization-target > :not(
