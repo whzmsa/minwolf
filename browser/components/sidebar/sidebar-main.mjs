@@ -127,9 +127,6 @@ export default class SidebarMain extends MozLitElement {
     this._hideSidebarMenuItem = document.getElementById(
       "sidebar-context-menu-hide-sidebar"
     );
-    this._enableVerticalTabsMenuItem = document.getElementById(
-      "sidebar-context-menu-enable-vertical-tabs"
-    );
     this._customizeSidebarMenuItem = document.getElementById(
       "sidebar-context-menu-customize-sidebar"
     );
@@ -438,7 +435,6 @@ export default class SidebarMain extends MozLitElement {
 
   hideExistingMenuItem() {
     this._customizeSidebarMenuItem.hidden = true;
-    this._enableVerticalTabsMenuItem.hidden = true;
     this._hideSidebarMenuItem.hidden = true;
     this._unpinExtensionMenuItem.hidden = true;
     this._manageExtensionMenuItem.hidden = true;
@@ -455,14 +451,12 @@ export default class SidebarMain extends MozLitElement {
     this._reportExtensionMenuItem.hidden = true;
     this._unpinExtensionMenuItem.hidden = true;
     this._customizeSidebarMenuItem.hidden = false;
-    this._enableVerticalTabsMenuItem.hidden = false;
     this._hideSidebarMenuItem.hidden = false;
     this.hideToolMenuItems();
   }
 
   async updateExtensionContextMenuItems() {
     this._customizeSidebarMenuItem.hidden = true;
-    this._enableVerticalTabsMenuItem.hidden = true;
     this._hideSidebarMenuItem.hidden = true;
     this._menuseparator.hidden = false;
     this._unpinExtensionMenuItem.hidden = false;
@@ -590,9 +584,6 @@ export default class SidebarMain extends MozLitElement {
               window.SidebarController._state.userLauncherVisible = false;
               window.SidebarController.updateToolbarButton();
             });
-            break;
-          case "sidebar-context-menu-enable-vertical-tabs":
-            await window.SidebarController.toggleVerticalTabs();
             break;
           case "sidebar-context-menu-customize-sidebar":
             await window.SidebarController.show("viewCustomizeSidebar");

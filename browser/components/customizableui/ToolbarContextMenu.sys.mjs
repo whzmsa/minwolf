@@ -241,7 +241,7 @@ export var ToolbarContextMenu = {
     // autohide item's checked state to mirror the autohide pref.
     showFullScreenViewContextMenuItems(popup);
 
-    // Show/hide sidebar and vertical tabs menu items
+    // Show/hide sidebar menu items
     let sidebarRevampEnabled = Services.prefs.getBoolPref("sidebar.revamp");
     let showSidebarActions =
       ["tabbrowser-tabs", "sidebar-button"].includes(toolbarItem?.id) ||
@@ -249,16 +249,6 @@ export var ToolbarContextMenu = {
       isTitlebarSpacer ||
       isMenuBarSpacer;
 
-    let toggleVerticalTabsItem = document.getElementById(
-      "toolbar-context-toggle-vertical-tabs"
-    );
-    toggleVerticalTabsItem.hidden = !showSidebarActions;
-    document.l10n.setAttributes(
-      toggleVerticalTabsItem,
-      gBrowser.tabContainer?.verticalMode
-        ? "toolbar-context-turn-off-vertical-tabs"
-        : "toolbar-context-turn-on-vertical-tabs"
-    );
     document.getElementById("toolbar-context-customize-sidebar").hidden =
       !sidebarRevampEnabled ||
       (toolbarItem?.id != "sidebar-button" &&
@@ -266,7 +256,7 @@ export var ToolbarContextMenu = {
       (!["tabbrowser-tabs", "sidebar-button"].includes(toolbarItem?.id) &&
         gBrowser.tabContainer?.verticalMode);
     document.getElementById("sidebarRevampSeparator").hidden =
-      !showSidebarActions || isVerticalTabStripMenu;
+      !sidebarRevampEnabled || !showSidebarActions || isVerticalTabStripMenu;
     document.getElementById("customizationMenuSeparator").hidden =
       toolbarItem?.id == "tabbrowser-tabs" ||
       (toolbarItem?.localName == "toolbarspring" &&

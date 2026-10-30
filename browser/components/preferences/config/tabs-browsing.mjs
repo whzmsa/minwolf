@@ -108,7 +108,6 @@ Preferences.addAll([
   },
 
   // Browser layout
-  { id: "sidebar.verticalTabs", type: "bool" },
 ]);
 
 if (lazy.AppConstants.platform === "win") {
@@ -649,49 +648,7 @@ Preferences.addSetting({
   pref: "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",
 });
 
-// Browser layout settings
-Preferences.addSetting({
-  id: "browserLayoutRadioGroup",
-  pref: "sidebar.verticalTabs",
-  get: prefValue => (prefValue ? "true" : "false"),
-  set: value => value === "true",
-});
-
 SettingGroupManager.registerGroups({
-  browserLayout: {
-    subcategory: "layout",
-    l10nId: "browser-layout-header2",
-    iconSrc: "chrome://browser/skin/sidebar-expanded.svg",
-    headingLevel: 2,
-    items: [
-      {
-        id: "browserLayoutRadioGroup",
-        control: "moz-visual-picker",
-        options: [
-          {
-            id: "browserLayoutHorizontalTabs",
-            value: "false",
-            l10nId: "browser-layout-horizontal-tabs2",
-            controlAttrs: {
-              class: "setting-chooser-item",
-              imagesrc:
-                "chrome://browser/content/preferences/browser-layout-horizontal.svg",
-            },
-          },
-          {
-            id: "browserLayoutVerticalTabs",
-            value: "true",
-            l10nId: "browser-layout-vertical-tabs2",
-            controlAttrs: {
-              class: "setting-chooser-item",
-              imagesrc:
-                "chrome://browser/content/preferences/browser-layout-vertical.svg",
-            },
-          },
-        ],
-      },
-    ],
-  },
   tabs: {
     l10nId: "tabs-group-header2",
     headingLevel: 2,

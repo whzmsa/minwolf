@@ -401,9 +401,6 @@ document.addEventListener(
         case "toolbar-context-customize":
           gCustomizeMode.enter("toolbar_context_menu");
           break;
-        case "toolbar-context-toggle-vertical-tabs":
-          SidebarController.toggleVerticalTabs();
-          break;
         case "toolbar-context-customize-sidebar":
           SidebarController.show("viewCustomizeSidebar");
           break;

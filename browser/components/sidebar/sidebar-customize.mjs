@@ -102,7 +102,6 @@ export class SidebarCustomize extends SidebarPage {
     extensionLink: ".extension-item a",
     positionInput: "#position",
     visibilityInput: "#hide-sidebar",
-    verticalTabsInput: "#vertical-tabs",
     expandOnHoverInput: "#expand-on-hover",
     openToolsFromSidebarInput: "#open-tools-from-sidebar",
     hoverPreviewInput: "#hover-preview",
@@ -246,49 +245,6 @@ export class SidebarCustomize extends SidebarPage {
       <link rel="stylesheet" href="chrome://browser/content/sidebar/sidebar-customize.css"></link>
       <div class="sidebar-panel">
         <div class="sidebar-panel-scrollable-content">
-          <moz-fieldset class="customize-group no-end-margin" data-l10n-id="sidebar-settings2">
-            <moz-checkbox
-              type="checkbox"
-              id="vertical-tabs"
-              name="verticalTabs"
-              data-l10n-id="sidebar-vertical-tabs"
-              @change=${this.#handleTabDirectionChange}
-              ?checked=${this.verticalTabsEnabled}
-            >
-            ${when(
-              this.verticalTabsEnabled,
-              () => html`
-                ${when(
-                  this.expandOnHoverEnabled,
-                  () => html`
-                    <moz-checkbox
-                      slot="nested"
-                      type="checkbox"
-                      id="expand-on-hover"
-                      name="expand-on-hover"
-                      data-l10n-id="expand-sidebar-on-hover"
-                      @change=${this.#toggleExpandOnHover}
-                      ?checked=${this.getWindow().SidebarController._state
-                        .revampVisibility === "expand-on-hover"}
-                      ?disabled=${this.visibility == "hide-sidebar"}
-                    ></moz-checkbox>
-                  `
-                )}
-                <moz-checkbox
-                  slot="nested"
-                  type="checkbox"
-                  id="hide-sidebar"
-                  name="hideSidebar"
-                  data-l10n-id="sidebar-hide-tabs-and-sidebar"
-                  @change=${this.#handleVisibilityChange}
-                  ?checked=${this.visibility == "hide-sidebar"}
-                  ?disabled=${this.getWindow().SidebarController._state
-                    .revampVisibility === "expand-on-hover"}
-                ></moz-checkbox>
-              `
-            )}
-            </moz-checkbox>
-          </moz-fieldset>
           <moz-fieldset
             class="customize-group medium-top-margin no-end-margin no-label"
             ?disabled=${this.verticalTabsEnabled}
@@ -401,14 +357,6 @@ export class SidebarCustomize extends SidebarPage {
   #toggleHoverPreview(e) {
     e.stopPropagation();
     Services.prefs.setBoolPref(HOVER_PREVIEW_PREF, e.target.checked);
-  }
-
-  #handleTabDirectionChange({ target: { checked } }) {
-    const verticalTabsEnabled = checked;
-    Services.prefs.setBoolPref(TAB_DIRECTION_SETTING_PREF, verticalTabsEnabled);
-    Glean.sidebarCustomize.tabsLayout.record({
-      orientation: verticalTabsEnabled ? "vertical" : "horizontal",
-    });
   }
 }
 
