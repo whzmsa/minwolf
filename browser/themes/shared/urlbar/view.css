@@ -5,3 +5,10 @@
 @import url("chrome://browser/skin/urlbar/view-nova.css") -moz-pref("browser.nova.enabled");
 
 @import url("chrome://browser/skin/urlbar/view-proton.css") not -moz-pref("browser.nova.enabled");
+
+@media not ((forced-colors) or (prefers-contrast)) {
+  .urlbarView {
+    --urlbarview-background-color-selected: light-dark(#dedede, #444444);
+    --urlbarview-text-color-selected: light-dark(#242424, #eeeeee);
+  }
+}

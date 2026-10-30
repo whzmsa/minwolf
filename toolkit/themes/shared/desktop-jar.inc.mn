@@ -170,6 +170,7 @@
   skin/classic/global/media/picture-in-picture-closed.svg  (../../shared/media/picture-in-picture-closed.svg)
   skin/classic/global/icons/minus.svg                      (../../shared/icons/minus.svg)
   skin/classic/global/narrate.css                          (../../shared/narrate.css)
+  skin/classic/global/neutral-theme.css                    (../../shared/neutral-theme.css)
   skin/classic/global/narrate/skip-backward-20.svg         (../../shared/narrate/skip-backward-20.svg)
   skin/classic/global/narrate/skip-forward-20.svg          (../../shared/narrate/skip-forward-20.svg)
   skin/classic/global/narrate/fast.svg                     (../../shared/narrate/fast.svg)

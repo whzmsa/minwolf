@@ -1,0 +1,101 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+:root,
+:host(.anonymous-content-host) {
+  --border-radius-xsmall: 2px;
+  --border-radius-small: 2px;
+  --border-radius-medium: 2px;
+  --border-radius-large: 2px;
+  --border-radius-xlarge: 2px;
+  --border-radius-xxlarge: 2px;
+  --button-border-radius: var(--border-radius-small);
+  --input-border-radius: var(--border-radius-small);
+  --input-search-border-radius: var(--input-border-radius);
+  --card-border-radius: var(--border-radius-large);
+  --card-border-radius-compact: var(--border-radius-medium);
+  --popup-border-radius: var(--border-radius-large);
+  --panel-border-radius: var(--popup-border-radius);
+  --panel-menuitem-border-radius: var(--border-radius-small);
+  --dialog-border-radius: var(--border-radius-large);
+  --toolbarbutton-border-radius: var(--border-radius-small);
+
+  @media not ((forced-colors) or (prefers-contrast)) {
+    --background-color-canvas: light-dark(#f5f5f5, #191919);
+    --background-color-box: light-dark(#ffffff, #242424);
+    --background-color-box-info: light-dark(#ebebeb, #303030);
+    --background-color-information: var(--background-color-box-info);
+    --text-color: light-dark(#242424, #eeeeee);
+    --text-color-deemphasized: light-dark(#626262, #b8b8b8);
+    --border-color: light-dark(#b0b0b0, #737373);
+    --border-color-deemphasized: light-dark(#d4d4d4, #454545);
+    --border-color-interactive: light-dark(#8a8a8a, #858585);
+
+    --color-accent-primary: light-dark(#454545, #d4d4d4);
+    --color-accent-primary-hover: light-dark(#303030, #e5e5e5);
+    --color-accent-primary-active: light-dark(#1f1f1f, #ffffff);
+    --color-accent-primary-selected: var(--color-accent-primary);
+    --text-color-accent-primary-selected: light-dark(#ffffff, #191919);
+    --icon-color-accent-primary-desaturated: var(--color-accent-primary);
+    --icon-color-information: var(--color-accent-primary);
+    --focus-outline-color: var(--color-accent-primary);
+    --link-color: var(--color-accent-primary);
+    --link-color-hover: var(--color-accent-primary-hover);
+    --link-color-active: var(--color-accent-primary-active);
+
+    --button-background-color: light-dark(#e8e8e8, #363636);
+    --button-background-color-hover: light-dark(#dcdcdc, #454545);
+    --button-background-color-active: light-dark(#cccccc, #555555);
+    --button-border-color: var(--border-color-deemphasized);
+    --button-text-color: var(--text-color);
+    --button-background-color-primary: var(--color-accent-primary);
+    --button-background-color-primary-hover: var(--color-accent-primary-hover);
+    --button-background-color-primary-active: var(--color-accent-primary-active);
+    --button-background-color-primary-disabled: var(--button-background-color-primary);
+    --button-text-color-primary: var(--text-color-accent-primary-selected);
+    --button-text-color-primary-hover: var(--button-text-color-primary);
+    --button-text-color-primary-active: var(--button-text-color-primary);
+
+    --input-background-color: var(--background-color-box);
+    --input-text-color: var(--text-color);
+    --input-border-color: var(--border-color-interactive);
+    --popup-background-color: var(--background-color-box);
+    --popup-border-color: var(--border-color-deemphasized);
+    --panel-background-color: var(--background-color-box);
+    --panel-text-color: var(--text-color);
+    --panel-footer-background-color: var(--background-color-box-info);
+    --sidebar-background-color: var(--background-color-canvas);
+    --sidebar-text-color: var(--text-color);
+    --sidebar-border-color: var(--border-color-deemphasized);
+    --card-background-color: var(--background-color-box);
+    --card-border-color: var(--border-color-deemphasized);
+    --table-row-background-color-alternate: var(--background-color-box-info);
+    --table-header-text-color: var(--button-text-color-primary);
+
+    --toolbar-background-color: light-dark(#f5f5f5, #242424);
+    --toolbar-text-color: var(--text-color);
+    --toolbar-field-background-color: light-dark(#e8e8e8, #303030);
+    --toolbar-field-background-color-focus: var(--background-color-box);
+    --toolbar-field-text-color: var(--text-color);
+    --toolbar-field-text-color-focus: var(--text-color);
+    --toolbar-field-border-color: var(--border-color-deemphasized);
+    --toolbar-field-border-color-focus: var(--focus-outline-color);
+    --toolbarbutton-background-color-hover: var(--button-background-color-hover);
+    --toolbarbutton-background-color-active: var(--button-background-color-active);
+    --toolbarbutton-icon-fill: var(--text-color);
+    --toolbarbutton-icon-fill-attention: var(--color-accent-primary);
+    --toolbox-background-color: light-dark(#e8e8e8, #191919);
+    --toolbox-background-color-inactive: var(--toolbox-background-color);
+    --toolbox-text-color: var(--text-color);
+    --toolbox-text-color-inactive: var(--text-color-deemphasized);
+    --toolbox-background-gradient: none;
+    --chrome-content-separator-color: var(--border-color-deemphasized);
+  }
+}
+
+moz-page-nav,
+moz-page-nav-button {
+  --page-nav-button-border-radius: var(--border-radius-small);
+  --page-nav-button-border-radius-focused: var(--border-radius-small);
+}

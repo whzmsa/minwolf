@@ -23,7 +23,7 @@
      with the input container's border edge, compensating the row's gutter. */
   --urlbarview-margin-block: calc(-1 * var(--urlbarview-row-gutter));
   --urlbarview-margin-inline: calc(-1 * var(--urlbarview-row-gutter));
-  --urlbarview-row-border-radius: var(--urlbarview-border-radius);
+  --urlbarview-row-border-radius: var(--border-radius-xsmall);
 
   --urlbarview-row-padding-inline: var(--urlbar-icon-padding);
   --urlbarview-row-inner-min-height: calc(var(--urlbarview-row-min-height) - var(--urlbarview-row-padding-block) * 2);

@@ -4,6 +4,7 @@
 
 @import url("chrome://global/skin/design-system/tokens-brand.css");
 @import url("chrome://global/skin/design-system/text-and-typography.css");
+@import url("chrome://global/skin/neutral-theme.css");
 
 @namespace html "http://www.w3.org/1999/xhtml";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";

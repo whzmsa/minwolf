@@ -15,10 +15,11 @@
   --panel-background-color: Menu;
   --panel-text-color: MenuText;
   --panel-padding: var(--panel-padding-block) 0;
-  /* This should match GetMenuCornerRadius() on macOS, or be overridden below */
-  --panel-border-radius: 6px;
+  --panel-border-radius: var(--popup-border-radius);
 
   @media (-moz-platform: macos) {
+    /* Match GetMenuCornerRadius() for native macOS menus. */
+    --panel-border-radius: 6px;
     --panel-background-color: none;
     --panel-border-color: transparent;
 

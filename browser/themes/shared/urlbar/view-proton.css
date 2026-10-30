@@ -164,7 +164,7 @@
      hover area is contiguous and a row is always hovered as the user moves the
      mouse across rows, even though each row's highlighted area is smaller. */
   border: var(--urlbarview-row-gutter) solid transparent;
-  border-radius: calc(var(--urlbarview-row-gutter) + var(--urlbar-inner-border-radius));
+  border-radius: var(--border-radius-xsmall);
   background-clip: padding-box;
 
   /* Must hide the overflowing rows while the view is updating */

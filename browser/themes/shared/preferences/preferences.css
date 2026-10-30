@@ -1640,3 +1640,129 @@ setting-pane[onsearchpane] {
     grid-template-columns: 1fr;
   }
 }
+
+:root#preferences-root {
+  --page-space-block-start: 32px;
+  --card-padding-inline: var(--space-xlarge);
+  --card-padding-block: var(--space-large);
+  --card-box-shadow: none;
+  --card-border-color: var(--border-color-deemphasized);
+  --card-border: var(--border-width) solid var(--card-border-color);
+  --card-border-radius: var(--border-radius-xsmall);
+  --box-border-radius: var(--border-radius-xsmall);
+  --box-border-color: var(--border-color-deemphasized);
+
+  @media not ((forced-colors) or (prefers-contrast)) {
+    --background-color-canvas: light-dark(#f5f5f5, #191919);
+  }
+
+  #categories {
+    --page-nav-margin-inline-start: 0px;
+    --page-nav-margin-block-start: var(--page-space-block-start);
+    --page-nav-gap: var(--space-xlarge);
+    --page-nav-button-gap: var(--space-xxsmall);
+    --page-nav-border-color: var(--border-color-deemphasized);
+    --page-nav-heading-logo-size: var(--icon-size-large);
+
+    box-sizing: border-box;
+    width: 252px;
+    padding-inline: var(--space-large);
+    padding-block-end: var(--space-large);
+    background-color: var(--background-color-box);
+  }
+
+  #categories > html|moz-page-nav-button {
+    --page-nav-button-padding: var(--space-small) var(--space-medium);
+    --page-nav-button-border-radius: var(--border-radius-xsmall);
+    --page-nav-button-border-radius-focused: var(--border-radius-xsmall);
+    --page-nav-button-indicator-width: 2px;
+    --page-nav-button-indicator-background-color: var(--color-accent-primary);
+
+    @media not ((forced-colors) or (prefers-contrast)) {
+      --page-nav-button-background-color: transparent;
+      --page-nav-button-text-color: var(--text-color);
+      --page-nav-button-text-color-selected: var(--text-color);
+      --page-nav-button-background-color-selected: transparent;
+      --page-nav-button-background-color-hover: transparent;
+      --page-nav-button-background-color-active: transparent;
+    }
+  }
+
+  .main-content {
+    padding-inline: clamp(24px, 5vw, 72px);
+    padding-block-end: calc(var(--space-xxlarge) * 2);
+  }
+
+  .pane-container {
+    box-sizing: border-box;
+    width: min(100%, 760px);
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  #search-container {
+    box-sizing: border-box;
+    width: 100%;
+    margin-inline: 0;
+    margin-block-end: var(--space-xlarge);
+    padding-block-end: var(--space-large);
+    border-block-end: var(--border-width) solid var(--border-color-deemphasized);
+  }
+
+  #searchInput {
+    --input-background-color: var(--background-color-box);
+    --input-search-border-radius: var(--border-radius-xsmall);
+  }
+
+  html|h1 {
+    font-size: var(--font-size-heading-large);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.02em;
+    margin-block-end: var(--space-xlarge);
+  }
+
+  .section-heading,
+  .subsection-heading,
+  html|h2 {
+    font-weight: var(--font-weight-semibold);
+    margin-block-end: var(--space-small);
+  }
+
+  .section-description,
+  .description-deemphasized {
+    line-height: 1.5;
+  }
+
+  setting-group[data-category] {
+    margin-block-end: var(--space-xxlarge);
+  }
+
+  @media not -moz-pref("browser.settings-redesign.enabled") {
+    #mainPrefPane > groupbox[data-category] {
+      padding: var(--space-xlarge);
+      border: var(--card-border);
+      border-radius: var(--card-border-radius);
+      background-color: var(--background-color-box);
+    }
+  }
+
+  @media (max-width: 950px) {
+    #categories {
+      width: 72px;
+      padding-inline: var(--space-small);
+    }
+
+    .main-content {
+      padding-inline: var(--space-xlarge);
+    }
+  }
+
+  @media (max-width: 600px) {
+    --page-space-block-start: 20px;
+    --card-padding-inline: var(--space-large);
+
+    .main-content {
+      padding-inline: var(--space-medium);
+    }
+  }
+}
